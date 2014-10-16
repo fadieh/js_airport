@@ -48,11 +48,12 @@ describe('Our Javascript airport can do the following:', function(){
 		expect(airport.isFull()).toBe(true);
 	});
 
+	it ('should report if its not full', function(){
+		expect(airport.isFull()).toBe(false);
+	});
+
 });
 
-
-// to do
-// should report if it s full
 // should report if its not full
 // tell us how many planes have landed
 // does not allow the same plane to land twice

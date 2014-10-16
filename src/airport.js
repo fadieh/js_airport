@@ -16,8 +16,15 @@ Airport.prototype.land = function(plane) {
 
 Airport.prototype.takeOff = function(plane) {
 	this.planes.splice(plane)
-}
+};
 
 Airport.prototype.isFull = function() {
-	return true
-}
+		if (this.planes.length < 40)
+		{
+		return false
+		}
+		else 
+		{
+		return true
+		}
+};
