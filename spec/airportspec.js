@@ -5,6 +5,12 @@ describe('Our Javascript airport can do the following:', function(){
 		airport = new Airport
 	})
 
+	fillUp = function(airport){
+		for(var i = 0; i < 40; i++) {
+			airport.land(new Plane);
+		}
+	}
+
 	it('can have planes', function(){
 		expect(airport.planes).toEqual([])
 	});
@@ -37,11 +43,15 @@ describe('Our Javascript airport can do the following:', function(){
 		expect(airport.takeOff(plane)).toEqual(undefined)
 	});
 
+	it ('should report if its full', function(){
+		fillUp(airport)
+		expect(airport.isFull()).toBe(true);
+	});
+
 });
 
 
 // to do
-// should only let a plane takeoff if it is present
 // should report if it s full
 // should report if its not full
 // tell us how many planes have landed
