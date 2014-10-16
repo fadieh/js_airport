@@ -18,6 +18,13 @@ describe('Our Javascript airport can do the following:', function(){
 		expect(airport.planes.length).toEqual(1)
 	});
 
+	it ('has a plane after it has landed', function(){
+		airport = new Airport
+		plane = new Plane
+		airport.land(plane)
+		expect(airport.planes).toEqual([plane])
+	});
+
 });
 
 
