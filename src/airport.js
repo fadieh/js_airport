@@ -15,5 +15,5 @@ Airport.prototype.land = function(plane) {
 };
 
 Airport.prototype.takeOff = function(plane) {
-	this.planes.splice(-1,1)
+	this.planes.splice(plane)
 }

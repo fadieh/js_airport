@@ -31,6 +31,12 @@ describe('Our Javascript airport can do the following:', function(){
 		expect(airport.planes).toEqual([])
 	});
 
+	it ('should only let a plane take off if its present', function(){
+		airfad = new Plane
+		airport.land(airfad)
+		expect(airport.takeOff(plane)).toEqual(undefined)
+	});
+
 });
 
 
