@@ -5,11 +5,14 @@ describe('Our Javascript airport can do the following:', function(){
 		expect(airport.planes).toEqual([])
 	});
 
+	it('can allow planes to land', function(){
+		plane = new Plane
+		expect(airport.land(plane)).toEqual(plane)
+	});
+
 });
 
-// to do
-//
-// allow planes to land
+
 // has a plane after it has landed
 // should know how many planes it has
 // allow planes to take off
