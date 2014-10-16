@@ -10,6 +10,14 @@ describe('Our Javascript airport can do the following:', function(){
 		expect(airport.land(plane)).toEqual(plane)
 	});
 
+	it('should know how many planes it has', function(){
+		plane = new Plane
+		airport = new Airport
+		expect(airport.planes.length).toEqual(0)
+		airport.land(plane)
+		expect(airport.planes.length).toEqual(1)
+	});
+
 });
 
 
