@@ -35,3 +35,4 @@ Airport.prototype.whichPlanesHaveLanded = function() {
 	}
 	return this.landedPlanes;
 };
+

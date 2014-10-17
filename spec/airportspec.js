@@ -62,7 +62,12 @@ describe('Our Javascript airport can do the following:', function(){
 		expect(airport.whichPlanesHaveLanded()).toEqual(["Plane"]);
 	});
 
-});
+	xit ('should not allow the same plane to land twice', function(){
+		airport.land(plane);
+		airport.land(plane);
+		expect(airport.planes.length).toEqual(1);
+	});
 
-// tell us how many planes have landed
-// does not allow the same plane to land twice
+
+
+});
