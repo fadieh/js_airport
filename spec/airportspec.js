@@ -52,8 +52,17 @@ describe('Our Javascript airport can do the following:', function(){
 		expect(airport.isFull()).toBe(false);
 	});
 
+	it ('should tell us how many planes have landed', function(){
+		airport.land(plane);
+		expect(airport.numberOfPlanesLanded()).toEqual(1);
+	});
+
+	it ('should tell us which planes have landed', function(){
+		airport.land(plane);
+		expect(airport.whichPlanesHaveLanded()).toEqual(["Plane"]);
+	});
+
 });
 
-// should report if its not full
 // tell us how many planes have landed
 // does not allow the same plane to land twice
