@@ -68,6 +68,20 @@ describe('Our Javascript airport can do the following:', function(){
 		expect(airport.planes.length).toEqual(1);
 	});
 
+	// CONTROL TOWER TESTS
+
+	it('should find the location of a plane', function(){
+
+	});
+
+	it('should let us know if a plane has landed', function(){
+
+	});
+
+	it('let us know if a plane has not landed', function(){
+
+	});
+
 
 
 });
