@@ -1,16 +1,25 @@
 function Airport() {
 
 	this.planes = [];
-	this.landedPlanes = []
+	this.landedPlanes = [];
 
 };
 
 function Plane() {
 	this.type = "Plane"
+	this.landed = false
+	this.baggageContained = []
+	this.flightNumber = ''
+};
+
+function Luggage() {
+	this.weight = 0
 };
 
 Airport.prototype.land = function(plane) {
+	if (this.landedPlanes != this.plane)
 	this.planes.push(plane)
+	plane.landed = true
 	return plane
 };
 
@@ -20,7 +29,7 @@ Airport.prototype.takeOff = function(plane) {
 
 Airport.prototype.isFull = function() {
 	if (this.planes.length < 40)
-	{ return false } 
+	{ return false }
 	else { return true }
 };
 
@@ -36,3 +45,9 @@ Airport.prototype.whichPlanesHaveLanded = function() {
 	return this.landedPlanes;
 };
 
+Plane.prototype.acceptLuggage = function(luggage) {
+	if (luggage.weight < 20)
+	this.baggageContained.push(luggage)
+	else
+	console.log(luggage)
+};

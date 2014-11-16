@@ -3,6 +3,7 @@ describe('Our Javascript airport can do the following:', function(){
 	beforeEach(function() {
 		plane = new Plane
 		airport = new Airport
+		luggage = new Luggage
 	})
 
 	fillUp = function(airport){
@@ -62,24 +63,53 @@ describe('Our Javascript airport can do the following:', function(){
 		expect(airport.whichPlanesHaveLanded()).toEqual(["Plane"]);
 	});
 
-	xit ('should not allow the same plane to land twice', function(){
+	it ('plane should know if its landed', function(){
+		airport.land(plane)
+		expect(plane.landed).toEqual(true)
+	});
+
+	it ('plane should know if its not landed', function(){
+		expect(plane.landed).toEqual(false)
+	})
+
+	it ('should not allow the same plane to land twice', function(){
 		airport.land(plane);
 		airport.land(plane);
 		expect(airport.planes.length).toEqual(1);
 	});
 
-	// CONTROL TOWER TESTS
+	it ('plane can accept luggage', function(){
+		plane.acceptLuggage(luggage);
+		expect(plane.baggageContained.length).toEqual(1)
+	});
 
-	it('should find the location of a plane', function(){
+	it ('plane can only accept luggage below 20kg', function(){
+		luggage.weight = 21
+		plane.acceptLuggage(luggage)
+		expect(plane.baggageContained.length).toEqual(0)
+	});
 
+	it ('airport has a name', function(){
+		airport.name = 'Gatwick'
+		expect(airport.name).toEqual('Gatwick')
+	});
+
+	it ('should recognise a flight number', function(){
+		plane.flightNumber = 'MK194'
+		expect(plane.flightNumber).toEqual('MK194')
+	});
+
+	it ('should generate a new flight number when it departs', function(){
+		plane.flightNumber = 'MK194'
+		airport.takeOff(plane)
+		expect(plane.flightNumber).notToEqual('MK194')
 	});
 
 	it('should let us know if a plane has landed', function(){
-
 	});
 
 	it('let us know if a plane has not landed', function(){
-
+		// if plane is docked at airport?
 	});
 
 
